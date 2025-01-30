@@ -11,6 +11,7 @@ Widget loginSubmitButton({
   return GestureDetector(
     onTap: () => { if (enabled) action() },
     child: Container(
+      margin: EdgeInsets.only(bottom: LoginLayout.loginInputBlockMargin) ,
       decoration: BoxDecoration(
         color: enabled ? clrYellow : clrGrey,
         borderRadius: BorderRadius.circular(LoginLayout.borderRadius),
