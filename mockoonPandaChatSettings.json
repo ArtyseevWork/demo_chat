@@ -1,0 +1,194 @@
+{
+  "uuid": "572a4df2-39cb-4b61-9cef-93f27362c1c8",
+  "lastMigration": 33,
+  "name": "Panda Chat",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "32f185fa-7559-4911-9b4d-a1fa97549268",
+      "type": "ws",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "example.com/chat",
+      "responses": [
+        {
+          "uuid": "2803119e-eb52-4b8d-9efd-25be0db593c2",
+          "body": "{\n  \"id\": \"msg_001\",\n  \"senderId\": \"user_123\",\n  \"text\": \"Hello, how are you?\",\n  \"timestamp\": 1672531200000,\n  \"status\": 200\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": true,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": "UNICAST",
+      "streamingInterval": 10000
+    },
+    {
+      "uuid": "385ab2fc-fbce-452f-a12a-7d280e092038",
+      "type": "http",
+      "documentation": "Rout for get token",
+      "method": "post",
+      "endpoint": "login",
+      "responses": [
+        {
+          "uuid": "b65744d8-dd40-4ff1-b5d1-db2bf24a8884",
+          "body": "{\n  \"token\": \"fake-jwt-token-123456\",\n  \"username\": \"user-0-0-7\",\n  \"id\": \"8\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "password",
+              "value": "123",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": "FALLBACK",
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "19bff64f-ada1-41a6-b9c1-25ecd5da0be0",
+      "type": "http",
+      "documentation": "Rout for get token",
+      "method": "post",
+      "endpoint": "aut",
+      "responses": [
+        {
+          "uuid": "f7715b17-bb12-4519-a207-c28ed7fca236",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "token",
+              "value": "fake-jwt-token-123456",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "name",
+              "value": "user-0-0-7",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "id",
+              "value": "8",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": "FALLBACK",
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "32f185fa-7559-4911-9b4d-a1fa97549268"
+    },
+    {
+      "type": "route",
+      "uuid": "385ab2fc-fbce-452f-a12a-7d280e092038"
+    },
+    {
+      "type": "route",
+      "uuid": "19bff64f-ada1-41a6-b9c1-25ecd5da0be0"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
