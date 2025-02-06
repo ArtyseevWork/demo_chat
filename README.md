@@ -1,17 +1,16 @@
-# pandachat
 
-Демо проект panda-chat.
-Для імітації бек-частини застосунку використовувалось програмне забезпечення Mockoon. Файл 
-налаштувань mockoonPandaChatSettings.json прикріплено до проекту. 
-Через обмеження бек-частини запускати проект потрібно з емулятора, так як запити виконуються на IP
-http://10.0.2.2:3001
+<div align="center">
+  <img height="194" width="346" src="https://github.com/ArtyseevWork/ArtyseevWork/blob/main/assets/animation/chat.gif"  />
+</div>
 
-Для входу можна використовувати будь-яке імʼя користувача та ПАРОЛЬ 123, в інакшому випадку 
-відбудеться помилка при вході.
+<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <h2>Demo Project: Chat</h2>
+  <p>This project uses the classic Clean Architecture pattern, Riverpod, WebSocket for chat functionality, and HTTP requests for user login and authentication.</p>
+  <p>Additionally, an architecture diagram (ChatStructureDiagram.png) is attached to the project, which will help you understand the entire structure. I highly recommend checking it out. Have a great day!</p>
+  <p>To simulate the backend part of the application, Mockoon software was used. The Mockoon settings file <strong>mockoonPandaChatSettings.json</strong> is attached to the project.</p>
+  <p>Due to limitations in the backend, the project should be run from an emulator, as requests are made to the IP <code>http://10.0.2.2:3001</code>.</p>
+</div>
 
-В проекті використовувався паттерн класичної чистої архітектури, Riverpod, Веб-сокет для реалізації 
-самого чату, та http-запити для логіну та подальшої авторизації користувача. 
-Також до проекту прикріплена діаграма архітектури (ChatStructureDiagram.png), яка допоможе зрозуміти
-всю структуру, раджу подивитись.  Мирного дня!
+
 
 
